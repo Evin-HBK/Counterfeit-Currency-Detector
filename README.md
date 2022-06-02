@@ -1,6 +1,6 @@
 # Counterfeit-Currency-Detector
 Counterfeit Currency Detector using CNN
-![CyberDome](https://user-images.githubusercontent.com/36796068/171685619-508ce060-a2ef-426f-a675-b02859c5d692.png =330x349)
+<img src="[https://your-image-url.type](https://user-images.githubusercontent.com/36796068/171685619-508ce060-a2ef-426f-a675-b02859c5d692.png)" width="330" height="349">
 <h2><u>Steps For Windows</u></h2>
 1. Install Python 3.8.10 64-bit : https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe<br>
 2. Install Pycharm Community Edition : https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC<br>
