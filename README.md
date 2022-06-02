@@ -9,6 +9,5 @@ Counterfeit Currency Detector using CNN
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. pip install -r requirements.txt<br><br>
 <h2><u>Running The Script</u></h2>
 &nbsp;&nbsp;&nbsp;&nbsp;python3 main.py<br>
-<br><br><br>
 ## Architecture Diagram
 ![CyberDome](https://user-images.githubusercontent.com/36796068/171684666-e2539ad8-79cb-46ec-a172-81e98a1be7f1.png)
