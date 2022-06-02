@@ -10,4 +10,5 @@ Counterfeit Currency Detector using CNN
 <h2><u>Running The Script</u></h2>
 &nbsp;&nbsp;&nbsp;&nbsp;python3 main.py<br>
 <br><br><br>
+##Architecture Diagram
 ![CyberDome](https://user-images.githubusercontent.com/36796068/171677917-933d60c0-ae7e-43d3-a37b-53d0fad54f1b.png)
