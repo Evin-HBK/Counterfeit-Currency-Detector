@@ -6,9 +6,9 @@ Counterfeit Currency Detector using CNN
 1. Install Python 3.8.10 64-bit : https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe<br>
 2. Install Pycharm Community Edition : https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC<br>
 3. <u>Open Windows Powershell and Run The Following Commands :</u><br>
-&nbsp;a. git clone https://github.com/Evin-HBK/Counterfeit-Currency-Detector<br>
-&nbsp;b. cd Counterfeit-Currency-Detector<br>
-&nbsp;c. pip install -r requirements.txt<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. git clone https://github.com/Evin-HBK/Counterfeit-Currency-Detector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. cd Counterfeit-Currency-Detector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. pip install -r requirements.txt<br><br>
 
 <h2><u>Running The Script</u></h2>
-python3 main.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python3 main.py<br>
