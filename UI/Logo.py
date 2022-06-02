@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -9,7 +10,7 @@ class Ui_MainWindow(object):
         font.setPointSize(8)
         MainWindow.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../Assets/Logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("Assets/Logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -25,7 +26,7 @@ class Ui_MainWindow(object):
         self.Logo = QtWidgets.QLabel(self.centralwidget)
         self.Logo.setGeometry(QtCore.QRect(-10, 230, 771, 91))
         self.Logo.setText("")
-        self.Logo.setPixmap(QtGui.QPixmap("../Assets/Logo.png"))
+        self.Logo.setPixmap(QtGui.QPixmap("Assets/Logo.png"))
         self.Logo.setObjectName("Logo")
         self.verinfo = QtWidgets.QLabel(self.centralwidget)
         self.verinfo.setGeometry(QtCore.QRect(680, 640, 71, 20))
@@ -60,8 +61,7 @@ class Ui_MainWindow(object):
         self.verinfo.setText(_translate("MainWindow", "version 1.0"))
         self.label.setText(_translate("MainWindow", "Loading Resouces..."))
 
-
-if __name__ == "__main__":
+def draw():
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -69,3 +69,7 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    draw()

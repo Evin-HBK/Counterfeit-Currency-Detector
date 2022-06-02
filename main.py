@@ -1,9 +1,6 @@
 from UI import Logo
-
-
-def main():
-    Logo.main()
-
+import os
 
 if __name__ == '__main__':
-    main()
+    print(os.getcwd())
+    Logo.draw()
