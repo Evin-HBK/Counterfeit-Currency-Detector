@@ -1,6 +1,9 @@
-from UI import Logo
+from UI import Logo , FileChooser
+import time
 import os
 
 if __name__ == '__main__':
-    print(os.getcwd())
-    Logo.draw()
+    Logo.start()
+    time.sleep(10)
+    Logo.close()
+    FileChooser.file()

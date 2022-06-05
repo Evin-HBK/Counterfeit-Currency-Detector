@@ -61,7 +61,8 @@ class Ui_MainWindow(object):
         self.verinfo.setText(_translate("MainWindow", "version 1.0"))
         self.label.setText(_translate("MainWindow", "Loading Resouces..."))
 
-def draw():
+
+def start():
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -72,4 +73,6 @@ def draw():
 
 
 if __name__ == "__main__":
-    draw()
+    start()
+
+
