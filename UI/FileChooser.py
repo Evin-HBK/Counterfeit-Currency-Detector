@@ -1,4 +1,14 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'FileChooser.ui'
+#
+# Created by: PyQt5 UI code generator 5.14.1
+#
+# WARNING! All changes made in this file will be lost!
+
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -28,8 +38,7 @@ class Ui_MainWindow(object):
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit.setGeometry(QtCore.QRect(30, 200, 221, 21))
         self.lineEdit.setAutoFillBackground(False)
-        self.lineEdit.setStyleSheet("lineEdit->setStyleSheet(\"QLineEdit {background-color: white;}\");\n"
-"")
+        self.lineEdit.setStyleSheet("border: white");
         self.lineEdit.setText("")
         self.lineEdit.setFrame(True)
         self.lineEdit.setObjectName("lineEdit")
@@ -48,13 +57,10 @@ class Ui_MainWindow(object):
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_2.setGeometry(QtCore.QRect(30, 370, 221, 21))
         self.lineEdit_2.setAutoFillBackground(False)
-        self.lineEdit_2.setStyleSheet("lineEdit_2->setStyleSheet(\"QLineEdit {background-color: white;}\");\n"
-"")
+        self.lineEdit_2.setStyleSheet("border: white");
         self.lineEdit_2.setText("")
         self.lineEdit_2.setFrame(True)
         self.lineEdit_2.setObjectName("lineEdit_2")
-        self.lineEdit.setStyleSheet("border: 1px solid grey;")
-        self.lineEdit_2.setStyleSheet("border: 1px solid grey;")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(270, 360, 88, 34))
         self.pushButton_2.setObjectName("pushButton_2")
@@ -67,7 +73,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.setFont(font)
         self.pushButton_3.setObjectName("pushButton_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(450, 150, 271, 111))
+        self.label_4.setGeometry(QtCore.QRect(460, 150, 271, 111))
         self.label_4.setText("")
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
@@ -76,8 +82,6 @@ class Ui_MainWindow(object):
         self.label_5.setText("")
         self.label_5.setScaledContents(True)
         self.label_5.setObjectName("label_5")
-        self.label_4.setStyleSheet("border: 1px solid white;")
-        self.label_5.setStyleSheet("border: 1px solid white;")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -110,7 +114,7 @@ class Ui_MainWindow(object):
         self.im2 = QtGui.QPixmap(file[0])
         self.label_5.setPixmap(self.im2)
 
-def file():
+if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -118,6 +122,3 @@ def file():
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
-if __name__ == "__main__":
-    file()
