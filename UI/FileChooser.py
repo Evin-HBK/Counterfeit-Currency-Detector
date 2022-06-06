@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit.setGeometry(QtCore.QRect(30, 200, 221, 21))
         self.lineEdit.setAutoFillBackground(False)
-        self.lineEdit.setStyleSheet("border: white");
+        self.lineEdit.setStyleSheet("QLineEdit{border : 1px solid white;}")
         self.lineEdit.setText("")
         self.lineEdit.setFrame(True)
         self.lineEdit.setObjectName("lineEdit")
@@ -57,7 +57,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_2.setGeometry(QtCore.QRect(30, 370, 221, 21))
         self.lineEdit_2.setAutoFillBackground(False)
-        self.lineEdit_2.setStyleSheet("border: white");
+        self.lineEdit_2.setStyleSheet("QLineEdit{border : 1px solid white;}")
         self.lineEdit_2.setText("")
         self.lineEdit_2.setFrame(True)
         self.lineEdit_2.setObjectName("lineEdit_2")
@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.setFont(font)
         self.pushButton_3.setObjectName("pushButton_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(460, 150, 271, 111))
+        self.label_4.setGeometry(QtCore.QRect(450, 150, 271, 111))
         self.label_4.setText("")
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
