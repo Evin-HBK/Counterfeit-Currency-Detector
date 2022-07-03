@@ -4,7 +4,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(752, 676)
+        MainWindow.resize(758,690)
+        MainWindow.setStyleSheet("background-color: rgb(50,62,74,255);")
         font = QtGui.QFont()
         font.setFamily("3270 Condensed")
         font.setPointSize(8)
@@ -40,7 +41,7 @@ class Ui_MainWindow(object):
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(0, 630, 121, 18))
+        self.label.setGeometry(QtCore.QRect(0, 630, 121, 15))
         font = QtGui.QFont()
         font.setFamily("3270 Condensed")
         font.setPointSize(10)

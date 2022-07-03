@@ -12,12 +12,12 @@ def RGB2BW(src_img):
 
     return bw_img
 
-def Median_Blur(bw_img):
+def Median_Blur(bw_img,ksize):
 
     # Noise Removal - Median Blur Filter (Optimal KSIZE - 3)
     #Does not preserve edges as much as bilateral filter
 
-    blur_img=cv2.medianBlur(bw_img,3)                               
+    blur_img=cv2.medianBlur(bw_img,ksize)                               
     Output(blur_img,"Denoised Image - Median Blur")
 
     return blur_img
@@ -75,6 +75,10 @@ def Contour_Detect(src_img,dst_img):
     # Here we use the CHAIN_APPROX_NONE as we need to detect the whole long edge of the note.
     # CHAIN_APPROX_SIMPLE removes the reduntant points and compresses the contour coordinates list, Hence we are not using it.
     contours,hierarchy=cv2.findContours(dst_img,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    # Next the numpy array containing the coordinates list is passed onto drawContours().
+    # This function draws the contour on the image
+    cv2.drawContours(src_img,contours,-1,(0, 255, 0),2,cv2.LINE_4)
+    Output(src_img,"Initial Contours Detected In Image")
 
     return contours
 
@@ -95,11 +99,8 @@ def Contour_Approx(contours,src_img):
         x,y,w,h = cv2.boundingRect(approxlist[rect_index])
         cv2.rectangle(src_img,(x,y),(x+w,y+h),(255,0,0),3)
         print("Crop Coordinates : ",approxlist[rect_index])
-        
-        # Next the numpy array containing the coordinates list is passed onto drawContours().
-        # This function draws the contour on the image
-        #cv2.drawContours(src_img,[approxlist[rect_index]],-1,(0, 255, 0),2,cv2.LINE_4)
-        #Output(src_img,"Contour Detected Image")
+        cv2.drawContours(src_img,[approxlist[rect_index]],-1,(0, 255, 0),2,cv2.LINE_4)
+        Output(src_img,"Approximated Rectangular Contours Detected In Image")
 
     return x,y,w,h
 
@@ -139,9 +140,9 @@ if __name__=='__main__':
     ################
     # Remove Noise #
     ################
-
-    #blur_img=Median_Blur(bw_img)
-    blur_img=Bilateral_Blur(bw_img,7,1,18)
+    ksize=7
+    blur_img=Median_Blur(bw_img,ksize)
+    #blur_img=Bilateral_Blur(bw_img,2,1,1)
 
 
     ####################
