@@ -13,13 +13,18 @@ if __name__=='__main__':
     predict_modified=predict_modified/255
     predict_modified=np.expand_dims(predict_modified,axis=0)
     result= classifier.predict(predict_modified)
-    if result[0][0] >= 0.5:
+    if result[0][0] >= 0.8:
         prediction = '500'
         probability =result[0][0]
         print ("Probability ="+ str(probability))
         print ("Prediction ="+prediction)
-    else:
-        prediction= 'cat'
+    elif result[0][0]<=0.2:
+        prediction= '2000'
         probability = 1 - result[0][0]
         print ("Probability ="+str(probability))
         print("Prediction ="+prediction)
+
+    else:
+        prediction='Invalid Image'
+        print("Prediction ="+prediction)
+
