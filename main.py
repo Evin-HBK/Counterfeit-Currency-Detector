@@ -1,4 +1,4 @@
-from UI import Logo , FileChooser
+from gui import Logo,FileChooser
 import time
 import os
 
