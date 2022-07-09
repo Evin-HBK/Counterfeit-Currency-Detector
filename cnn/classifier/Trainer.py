@@ -8,7 +8,7 @@ from tensorflow.keras.optimizers import RMSprop
 import tensorflow as tf
 from keras.layers import Activation, Dense, Flatten , Dropout
 import pickle
-base_dir = '/home/henok/Desktop/S6/Courses/CSD 334 - Mini Project/Counterfeit-Currency-Detector/classifier/dataset'
+base_dir = os.getcwd()+'/dataset'
 train_dir = os.path.join(base_dir, 'train')
 validation_dir = os.path.join(base_dir, 'validation')
 
