@@ -12,6 +12,13 @@ base_dir = os.getcwd()+'/dataset'
 train_dir = os.path.join(base_dir, 'train')
 validation_dir = os.path.join(base_dir, 'validation')
 
+print("+++++++++++++")
+print("+ Debug Log +")
+print("+++++++++++++")
+print("base_dir = "+base_dir)
+print("train_dir = "+train_dir)
+print("validation_dir = "+validation_dir+"\n\n")
+
 # Directory with our training 500 pictures
 train_500_dir = os.path.join(train_dir, '500')
 
@@ -69,5 +76,5 @@ x = Dense(1, activation='sigmoid')(x)
 model = tf.keras.models.Model(base_model.input, x)
 
 model.compile(optimizer = RMSprop(lr=0.0001), loss = 'binary_crossentropy', metrics = ['acc'])
-inc_history = model.fit_generator(train_generator, validation_data = validation_generator, steps_per_epoch = 10, epochs = 10)
-model.save('classifier.model')
+inc_history = model.fit_generator(train_generator, validation_data = validation_generator,steps_per_epoch = 10, epochs = 10)
+model.save('model')
