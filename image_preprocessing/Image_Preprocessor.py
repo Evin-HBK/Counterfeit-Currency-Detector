@@ -48,7 +48,7 @@ def Edge_Sharpen(blur_img):
     # Using a 3x3 numpy array as parameter for filter2D()                         # 
     ###############################################################################
 
-    filter = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
+    filter = np.array([[-1, -1, -1], [-1,9, -1], [-1, -1, -1]])
     shrp_img=cv2.filter2D(blur_img,-1,filter)
     Output(blur_img,"Edge Sharpened Image")
 
