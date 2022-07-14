@@ -236,3 +236,4 @@ if __name__=='__main__':
     ##################
 
     Output(dst_img,"Final Output")
+    cv2.imwrite('test_data/output.jpg',dst_img)
