@@ -156,6 +156,10 @@ def Contour_Approx(contours,src_img):
 
     return x,y,w,h
 
+def Perspective_Transform(x,y,w,h,img):
+
+
+
 def Crop(src_img,x,y,w,h):
 
     ##############################################################################
@@ -220,15 +224,26 @@ if __name__=='__main__':
     ###################
     # Detect Contours #
     ###################
-    cpy_src_img=copy.deepcopy(src_img)
+    cpy_src_img1=copy.deepcopy(src_img)
     contours=Contour_Detect(cpy_src_img,thr_img)
-    x,y,w,h=Contour_Approx(contours,cpy_src_img)
+    x,y,w,h=Contour_Approx(contours,cpy_src_img1)
 
+
+    #########################
+    # Perspective Transform #
+    #########################
+    cpy_src_img2=copy.deepcopy(src_img)
+    Perspective_Transform(x,y,w,h,cpy_src_img2)
+    
+
+
+    
     ##############
     # Crop Image #
     ##############
 
     dst_img=Crop(src_img,x,y,w,h)
+
 
 
     ##################

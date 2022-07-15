@@ -7,6 +7,11 @@ from keras import utils
 CATEGORIES = ["500","2000"]
 import os
 from time import sleep
+import tensorflow.keras
+from PIL import Image, ImageOps
+import numpy as np
+import streamlit as st
+from PIL import Image
 def frontLoad():
     print("Loading Front Classifier Model ....\n\n")
     classifier = tf.keras.models.load_model("modelfront")
@@ -18,48 +23,61 @@ def backLoad():
     print("\n\nBack Classifier Model Loaded.\n\n")
     return classifier
 
-def Input(classifier,filepath):
-    predict = utils.load_img(filepath, target_size=(224,224))
-    predict_modified=utils.img_to_array(predict)
-    predict_modified=predict_modified/255
-    predict_modified=np.expand_dims(predict_modified,axis=0)
-    result= classifier.predict(predict_modified)
-    print("filename = "+filepath)
-    threshold=0.9
+def currency_classification(img, model):
+    
+    # Create the array of the right shape to feed into the keras model
+    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+    image = Image.open(img)
+    #image sizing
+    size = (224, 224)
 
-    if result[0][0] >= threshold:
-        prediction = '500'
-        probability =result[0][0]
-        print ("Probability ="+ str(probability))
-        print ("Prediction ="+prediction)
-        return 500
-    elif result[0][0]<=1-threshold:
-        prediction= '2000'
-        probability = 1 - result[0][0]
-        print ("Probability ="+str(probability))
-        print("Prediction ="+prediction)
-        return 2000
-    else:
-        prediction='Invalid Image'
-        return 0
-    print("\n\n")
+    image = ImageOps.fit(image, size, Image.ANTIALIAS)
+
+
+    #turn the image into a numpy array
+    image_array = np.asarray(image)
+    # Normalize the image
+    normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
+
+    # Load the image into the array
+    data[0] = normalized_image_array
+
+    # run the inference
+    prediction = model.predict(data)
+    return np.argmax(prediction)
+
 
 if __name__=='__main__':
     classifier=frontLoad()
     sleep(2)
     os.system('clear')
     filepath=input("Enter Front Side of Note:")
-    value1=Input(classifier,filepath)
-    print(str(value1))
-    value2=0
-    if value1!=0:
+    label1=currency_classification(filepath,classifier)
+    switcher = {
+             0 : "five hundred", 
+             1: "two thousand",
+             2: "invalid image",
+    }
+    s1=switcher.get(label1, "Not Maching") 
+    print(s1)
+    if(s1=="five hundred" or s1=="two thousand"):
         classifier=backLoad()
         sleep(2)
         os.system('clear')
         filepath=input("Enter Back Side of Note:")
-        value2=Input(classifier,filepath)
-    if value1==value2:
-        print("Prediction ="+str(value2))
+        label2=currency_classification(classifier,filepath)
+        switcher = {
+             0 : "five hundred", 
+             1: "two thousand",
+             2: "invalid image",
+        }
+        s2=switcher.get(label2, "Not Maching")
+        print(s2) 
+        if label1==label2:
+            print(s1," note detected")
+        else:
+            print("Invalid note/image")
     else:
-        print("Invalid Image")
-    exit(0)
+        print(s1)
+
+ 
